@@ -18,11 +18,11 @@ app.layout = html.Div(
         # Header
         html.H1("Suicide Data Analysis Dashboard", style={'textAlign': 'center'}),
 
-        # ------------------ Row 1 ------------------
+        # --------------------------------------------------------- Row 1 ------------------------------------------------------------
         html.Div(
             style={'display': 'flex', 'justifyContent': 'space-between'},
             children=[
-                # Column 1: Age Suicide Rate (Pie Chart)
+                # Column 1: 
                 html.Div(
                     style={'width': '48%'},
                     children=[
@@ -30,7 +30,7 @@ app.layout = html.Div(
                         html.P("Average Suicide Rate by Age Category", style={'textAlign': 'center'})
                     ]
                 ),
-                # Column 2: Top 10 Countries with Most Suicides (Bar Chart)
+                # Column 2: 
                 html.Div(
                     style={'width': '48%'},
                     children=[
@@ -41,11 +41,11 @@ app.layout = html.Div(
             ]
         ),
 
-        # ------------------ Row 2 ------------------
+        # --------------------------------------------------------- Row 2 ------------------------------------------------------------
         html.Div(
             style={'display': 'flex', 'justifyContent': 'space-between', 'marginTop': '20px'},
             children=[
-                # Column 1: Top 10 Countries with Least Suicides (Bar Chart)
+                # Column 1: 
                 html.Div(
                     style={'width': '48%'},
                     children=[
@@ -53,7 +53,7 @@ app.layout = html.Div(
                         html.P("Top 10 Countries with Least Suicides", style={'textAlign': 'center'})
                     ]
                 ),
-                # Column 2: Population vs. Suicides (Scatter Plot)
+                # Column 2: 
                 html.Div(
                     style={'width': '48%'},
                     children=[
@@ -64,11 +64,12 @@ app.layout = html.Div(
             ]
         ),
 
-        # ------------------ Row 3 ------------------
+        
+        # --------------------------------------------------------- Row 3 ------------------------------------------------------------
         html.Div(
             style={'display': 'flex', 'justifyContent': 'space-between', 'marginTop': '20px'},
             children=[
-                # Column 1: GDP per Capita vs. Suicides (Scatter Plot)
+                # Column 1: 
                 html.Div(
                     style={'width': '48%'},
                     children=[
@@ -76,7 +77,7 @@ app.layout = html.Div(
                         html.P("Effect of GDP per Capita on Suicide Rates", style={'textAlign': 'center'})
                     ]
                 ),
-                # Column 2: Trend of Suicide Rates Across Years (Line Chart)
+                # Column 2:
                 html.Div(
                     style={'width': '48%'},
                     children=[
@@ -87,11 +88,11 @@ app.layout = html.Div(
             ]
         ),
 
-        # ------------------ Row 4 ------------------
+        # --------------------------------------------------------- Row 4 ------------------------------------------------------------
         html.Div(
             style={'display': 'flex', 'justifyContent': 'space-between', 'marginTop': '20px'},
             children=[
-                # Column 1: Average Suicide Rate by Sex (Bar Chart)
+                # Column 1:
                 html.Div(
                     style={'width': '48%'},
                     children=[
@@ -99,7 +100,7 @@ app.layout = html.Div(
                         html.P("Average Suicide Rate by Sex", style={'textAlign': 'center'})
                     ]
                 ),
-                # Column 2: Suicides by Generation (Bar Chart)
+                # Column 2:
                 html.Div(
                     style={'width': '48%'},
                     children=[
