@@ -1,7 +1,12 @@
 from dash import Dash, dcc, html
 from data_analysis import (
     fig_age_suicide,
-    fig_country_suicide,
+    fig_most_suicides,
+    fig_least_suicides,
+    fig_pop_vs_suicides,
+    fig_gdp_vs_suicides,
+    fig_year_trend,
+    fig_sex_suicide,
     fig_generation_suicide
 )
 
@@ -13,35 +18,94 @@ app.layout = html.Div(
         # Header
         html.H1("Suicide Data Analysis Dashboard", style={'textAlign': 'center'}),
 
-        # ----------------------------------------------------- Row 1 ---------------------------------
+        # ------------------ Row 1 ------------------
         html.Div(
+            style={'display': 'flex', 'justifyContent': 'space-between'},
             children=[
-                dcc.Graph(figure=fig_age_suicide),
-                html.P(
-                    "Is the suicide rate more prominent in some age categories than others?",
-                    style={'textAlign': 'center', 'marginTop': '10px', 'marginBottom': '20px'}
+                # Column 1: Age Suicide Rate (Pie Chart)
+                html.Div(
+                    style={'width': '48%'},
+                    children=[
+                        dcc.Graph(figure=fig_age_suicide),
+                        html.P("Average Suicide Rate by Age Category", style={'textAlign': 'center'})
+                    ]
+                ),
+                # Column 2: Top 10 Countries with Most Suicides (Bar Chart)
+                html.Div(
+                    style={'width': '48%'},
+                    children=[
+                        dcc.Graph(figure=fig_most_suicides),
+                        html.P("Top 10 Countries with Most Suicides", style={'textAlign': 'center'})
+                    ]
                 )
             ]
         ),
 
-        # ----------------------------------------------------- Row 2 ---------------------------------
+        # ------------------ Row 2 ------------------
         html.Div(
+            style={'display': 'flex', 'justifyContent': 'space-between', 'marginTop': '20px'},
             children=[
-                dcc.Graph(figure=fig_country_suicide),
-                html.P(
-                    "Which countries have the most and the least number of suicides?",
-                    style={'textAlign': 'center', 'marginTop': '10px', 'marginBottom': '20px'}
+                # Column 1: Top 10 Countries with Least Suicides (Bar Chart)
+                html.Div(
+                    style={'width': '48%'},
+                    children=[
+                        dcc.Graph(figure=fig_least_suicides),
+                        html.P("Top 10 Countries with Least Suicides", style={'textAlign': 'center'})
+                    ]
+                ),
+                # Column 2: Population vs. Suicides (Scatter Plot)
+                html.Div(
+                    style={'width': '48%'},
+                    children=[
+                        dcc.Graph(figure=fig_pop_vs_suicides),
+                        html.P("Effect of Population on Suicide Rates", style={'textAlign': 'center'})
+                    ]
                 )
             ]
         ),
 
-        # ----------------------------------------------------- Row 3 ---------------------------------
+        # ------------------ Row 3 ------------------
         html.Div(
+            style={'display': 'flex', 'justifyContent': 'space-between', 'marginTop': '20px'},
             children=[
-                dcc.Graph(figure=fig_generation_suicide),
-                html.P(
-                    "Show the Number of Suicides by Generation",
-                    style={'textAlign': 'center', 'marginTop': '10px', 'marginBottom': '20px'}
+                # Column 1: GDP per Capita vs. Suicides (Scatter Plot)
+                html.Div(
+                    style={'width': '48%'},
+                    children=[
+                        dcc.Graph(figure=fig_gdp_vs_suicides),
+                        html.P("Effect of GDP per Capita on Suicide Rates", style={'textAlign': 'center'})
+                    ]
+                ),
+                # Column 2: Trend of Suicide Rates Across Years (Line Chart)
+                html.Div(
+                    style={'width': '48%'},
+                    children=[
+                        dcc.Graph(figure=fig_year_trend),
+                        html.P("Trend of Suicide Rates Across the Years", style={'textAlign': 'center'})
+                    ]
+                )
+            ]
+        ),
+
+        # ------------------ Row 4 ------------------
+        html.Div(
+            style={'display': 'flex', 'justifyContent': 'space-between', 'marginTop': '20px'},
+            children=[
+                # Column 1: Average Suicide Rate by Sex (Bar Chart)
+                html.Div(
+                    style={'width': '48%'},
+                    children=[
+                        dcc.Graph(figure=fig_sex_suicide),
+                        html.P("Average Suicide Rate by Sex", style={'textAlign': 'center'})
+                    ]
+                ),
+                # Column 2: Suicides by Generation (Bar Chart)
+                html.Div(
+                    style={'width': '48%'},
+                    children=[
+                        dcc.Graph(figure=fig_generation_suicide),
+                        html.P("Suicides by Generation", style={'textAlign': 'center'})
+                    ]
                 )
             ]
         )
